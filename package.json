@@ -59,6 +59,7 @@
     "@babel/register": "^7.12.10",
     "@vscode/sqlite3": "^5.0.7",
     "express": "^4.17.1",
-    "knex": "^1.0.1"
+    "knex": "^1.0.1",
+    "sass": "^1.49.7"
   }
 }

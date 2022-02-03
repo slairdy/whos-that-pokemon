@@ -1,0 +1,126 @@
+/* variables */
+$path:'/images/';
+$dropshadow:drop-shadow(0.2vw 0.2vw 0.2vw rgb(61, 97, 163));
+
+/* swatches */
+$navy:#316cb2;
+$blue:#5db9ff;
+$red:#ff1f1f;
+$yellow:#fbd743;
+$green:#45d145;
+
+@mixin box{
+  border-radius: 20px;
+  border:12px $yellow solid;
+  filter: $dropshadow;
+  box-sizing: border-box;
+  margin:auto;
+}
+
+body{
+  background-color:$blue;
+}
+
+#quizWrap{
+  width:80vw;
+  height:45vw;
+  max-width:calc(800px*1.6);
+  max-height:calc(450px*1.6);
+  margin:20px auto;
+  position:relative;
+  background-repeat: no-repeat;
+  background-position:center top;
+  background-size:cover;
+  background-image:url($path+'whos_that_pokemon.png');
+  @include box;
+}
+
+#hiddenPokemon{
+  cursor:pointer;
+  margin-top:11vw;
+  margin-left:12vw;
+  @media (min-width: calc(800px*1.6)) {
+    margin-top:160px;
+    margin-left:200px;
+  }
+  svg{
+    width:30%;
+    filter: $dropshadow;
+  }
+  svg path{
+    transition: fill 0.8s;
+  }
+  &:hover svg path{
+    fill: $navy !important;
+  }
+}
+
+#quizImg{
+  position:relative;
+}
+
+#quizImg img{
+  max-width:100%;
+}
+
+h1{
+  font-family: 'Montserrat', sans-serif;
+  text-align:center;
+  font-size:5vw;
+  text-transform: uppercase;
+  margin:10px auto;
+  color:$navy;
+  text-shadow: 3px 3px $yellow;
+}
+
+#answers{
+  @include box;
+  width:80vw;
+  margin-top:12px;
+  max-width:calc(800px*1.6);
+  background-color:#fff;
+  padding:20px;
+  form{
+    width:100%;
+  }
+  .buttonWrap{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    row-gap: 12px;
+    column-gap: 4%;
+  }
+  button{
+    border:0px;
+    width:48%;
+    @media (max-width: 900px) {
+      width:100%;
+    }
+    background-color:$yellow;
+    border-radius: 10px;
+    padding:6px;
+    font-family: 'Montserrat', sans-serif;
+    text-align:center;
+    font-size:20px;
+    color:$navy;
+    cursor:pointer;
+    text-transform: uppercase;
+    align-items: stretch;
+    filter:$dropshadow;
+    &:focus{
+      border:none;
+      outline: none;
+    }
+    &:hover{
+      background-color:$navy;
+      color:$yellow;
+    }
+  }
+  .correct{
+    background-color:$green;
+  }
+  .incorrect{
+    background-color:$red;
+    color:$yellow;
+  }
+}

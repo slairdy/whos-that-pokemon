@@ -1,9 +1,10 @@
 import React from 'react'
+import Quiz1 from './Quiz1'
 
 function App () {
   return (
     <div>
-      <h1>Widgets for the win!</h1>
+      <Quiz1 />
     </div>
   )
 }
