@@ -1,8 +1,123 @@
-.widget-details .visible {
-  display: block;
+/* variables */
+/* swatches */
+body {
+  background-color: #5db9ff;
 }
 
-.widget-details .hidden {
-  display: none;
+#quizWrap {
+  width: 80vw;
+  height: 45vw;
+  max-width: 1280px;
+  max-height: 720px;
+  margin: 20px auto;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-image: url("/images/whos_that_pokemon.png");
+  border-radius: 20px;
+  border: 12px #fbd743 solid;
+  filter: drop-shadow(0.2vw 0.2vw 0.2vw #3d61a3);
+  box-sizing: border-box;
+  margin: auto;
 }
 
+#hiddenPokemon {
+  cursor: pointer;
+  margin-top: 11vw;
+  margin-left: 12vw;
+}
+@media (min-width: 1280px) {
+  #hiddenPokemon {
+    margin-top: 160px;
+    margin-left: 200px;
+  }
+}
+#hiddenPokemon svg {
+  width: 30%;
+  filter: drop-shadow(0.2vw 0.2vw 0.2vw #3d61a3);
+}
+#hiddenPokemon svg path {
+  transition: fill 0.8s;
+}
+#hiddenPokemon:hover svg path {
+  fill: #316cb2 !important;
+}
+
+#quizImg {
+  position: relative;
+}
+
+#quizImg img {
+  max-width: 100%;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 5vw;
+  text-transform: uppercase;
+  margin: 10px auto;
+  color: #316cb2;
+  text-shadow: 3px 3px #fbd743;
+}
+
+#answers {
+  border-radius: 20px;
+  border: 12px #fbd743 solid;
+  filter: drop-shadow(0.2vw 0.2vw 0.2vw #3d61a3);
+  box-sizing: border-box;
+  margin: auto;
+  width: 80vw;
+  margin-top: 12px;
+  max-width: 1280px;
+  background-color: #fff;
+  padding: 20px;
+}
+#answers form {
+  width: 100%;
+}
+#answers .buttonWrap {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 12px;
+  column-gap: 4%;
+}
+#answers button {
+  border: 0px;
+  width: 48%;
+  background-color: #fbd743;
+  border-radius: 10px;
+  padding: 6px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 20px;
+  color: #316cb2;
+  cursor: pointer;
+  text-transform: uppercase;
+  align-items: stretch;
+  filter: drop-shadow(0.2vw 0.2vw 0.2vw #3d61a3);
+}
+@media (max-width: 900px) {
+  #answers button {
+    width: 100%;
+  }
+}
+#answers button:focus {
+  border: none;
+  outline: none;
+}
+#answers button:hover {
+  background-color: #316cb2;
+  color: #fbd743;
+}
+#answers .correct {
+  background-color: #45d145;
+}
+#answers .incorrect {
+  background-color: #ff1f1f;
+  color: #fbd743;
+}
+
+/*# sourceMappingURL=main.css.map */
