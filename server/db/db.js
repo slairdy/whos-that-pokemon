@@ -3,9 +3,9 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getWidgets
+  getPokemonData
 }
 
-function getWidgets (db = connection) {
+function getPokemonData (db = connection) {
   return db('widgets').select()
 }
