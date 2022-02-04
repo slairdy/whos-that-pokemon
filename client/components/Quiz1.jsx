@@ -13,6 +13,7 @@ function Quiz1 (props) {
   const isCorrect = evt => {
     const isCorrect = parseInt(evt.target.id) === thatPokemon.id
     document.getElementById(thatPokemon.id).className = 'correct'
+    document.getElementById('hiddenPokemon').className = ''
     if (isCorrect === true) {
       evt.target.className = 'correct'
     } else {
@@ -29,7 +30,7 @@ function Quiz1 (props) {
     <>
       <h1>Who&rsquo;s that Pokemon?</h1>
       <div id="quizWrap">
-        <div id="hiddenPokemon">
+        <div id="hiddenPokemon" className="hidden">
           {pokemonPic}
         </div>
       </div>

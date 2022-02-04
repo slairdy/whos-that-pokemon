@@ -27,6 +27,13 @@ body {
   margin-top: 11vw;
   margin-left: 12vw;
 }
+
+
+#hiddenPokemon.hidden svg path{
+  fill: #316cb2 !important;
+}
+
+
 @media (min-width: 1280px) {
   #hiddenPokemon {
     margin-top: 160px;
@@ -40,9 +47,9 @@ body {
 #hiddenPokemon svg path {
   transition: fill 0.8s;
 }
-#hiddenPokemon:hover svg path {
+/* #hiddenPokemon:hover svg path {
   fill: #316cb2 !important;
-}
+} */
 
 #quizImg {
   position: relative;

@@ -43,15 +43,18 @@ body{
     margin-top:160px;
     margin-left:200px;
   }
-  svg{
-    width:30%;
-    filter: $dropshadow;
-  }
   svg path{
     transition: fill 0.8s;
   }
   &:hover svg path{
     fill: $navy !important;
+  }
+}
+
+#hiddenPokemon.hidden{
+  svg{
+    width:30%;
+    filter: $dropshadow;
   }
 }
 
