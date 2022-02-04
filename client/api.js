@@ -1,9 +1,17 @@
 import request from 'superagent'
 
-const widgetUrl = '/api/v1/widgets/'
+/* const pokemonUrl = '/api/v1/pokemon/'
 
-export function getWidgets () {
-  return request
-    .get(widgetUrl)
+export function getPokemon () {
+  return requestf
+    .get(pokemonUrl)
     .then(response => response.body)
+} */
+
+export function getPokemonInfo () {
+  return request
+    .get('https://pokeapi.co/api/v2/pokemon?limit=151')
+    .then(response => {
+      return response.body
+    })
 }
