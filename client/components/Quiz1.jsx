@@ -10,6 +10,21 @@ function Quiz1 (props) {
   const thatPokemon = props.pokemon[Math.floor(Math.random() * props.pokemon.length)]
   console.log(thatPokemon)
 
+  const isCorrect = evt => {
+    const isCorrect = parseInt(evt.target.id) === thatPokemon.id
+    document.getElementById(thatPokemon.id).className = 'correct'
+    if (isCorrect === true) {
+      evt.target.className = 'correct'
+    } else {
+      evt.target.className = 'incorrect'
+    }
+    // alert(isCorrect)
+
+    setTimeout(function () {
+      props.loadPokemon()
+    }, 3000)
+  }
+
   return (
     <>
       <h1>Who&rsquo;s that Pokemon?</h1>
@@ -23,7 +38,7 @@ function Quiz1 (props) {
           <div className="buttonWrap">
             {props.pokemon.map(pokemon => {
               return (
-                <button key={pokemon.id} id={pokemon.id}>{pokemon.pokemon.name}</button>
+                <button onClick={isCorrect} key={pokemon.id} id={pokemon.id}>{pokemon.pokemon.name}</button>
               )
             })}
           </div>

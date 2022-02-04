@@ -9,7 +9,7 @@ function App () {
   const [loading, setLoading] = useState(true)
   console.log(pokemonData)
 
-  useEffect(() => {
+  function loadPokemon () {
     setLoading(true)
     getPokemonInfo()
       .then(pokemonData => {
@@ -20,6 +20,10 @@ function App () {
         setLoading(false)
       })
       .catch(e => console.error(e))
+  }
+
+  useEffect(() => {
+    loadPokemon()
   }, [])
 
   if (loading) return (<p>loading...</p>)
@@ -40,7 +44,7 @@ function App () {
 
   return (
     <div>
-      <Quiz1 pokemon={fourPokemon} randInt={randInt} />
+      <Quiz1 pokemon={fourPokemon} loadPokemon={loadPokemon} />
     </div>
   )
 }
