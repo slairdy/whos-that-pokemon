@@ -39,22 +39,14 @@ body{
   cursor:pointer;
   margin-top:11vw;
   margin-left:12vw;
+  width:30%;
+  filter: $dropshadow;
+  border:1px pink solid;
+  display:block;
+  height:60%;
   @media (min-width: calc(800px*1.6)) {
     margin-top:160px;
     margin-left:200px;
-  }
-  svg path{
-    transition: fill 0.8s;
-  }
-  &:hover svg path{
-    fill: $navy !important;
-  }
-}
-
-#hiddenPokemon.hidden{
-  svg{
-    width:30%;
-    filter: $dropshadow;
   }
 }
 

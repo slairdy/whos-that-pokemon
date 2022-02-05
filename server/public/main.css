@@ -26,30 +26,18 @@ body {
   cursor: pointer;
   margin-top: 11vw;
   margin-left: 12vw;
+  width: 30%;
+  filter: drop-shadow(0.2vw 0.2vw 0.2vw #3d61a3);
+  border: 1px pink solid;
+  display: block;
+  height: 60%;
 }
-
-
-#hiddenPokemon.hidden svg path{
-  fill: #316cb2 !important;
-}
-
-
 @media (min-width: 1280px) {
   #hiddenPokemon {
     margin-top: 160px;
     margin-left: 200px;
   }
 }
-#hiddenPokemon svg {
-  width: 30%;
-  filter: drop-shadow(0.2vw 0.2vw 0.2vw #3d61a3);
-}
-#hiddenPokemon svg path {
-  transition: fill 0.8s;
-}
-/* #hiddenPokemon:hover svg path {
-  fill: #316cb2 !important;
-} */
 
 #quizImg {
   position: relative;
