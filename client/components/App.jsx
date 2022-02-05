@@ -7,7 +7,6 @@ import { getPokemonInfo } from '../api'
 function App () {
   const [pokemonData, setPokemonData] = useState(null) // console.log(pokemonData) = {count: 1118, next: 'https://pokeapi.co/api/v2/pokemon?offset=151&limit=151', previous: null, results: Array(151)}
   const [loading, setLoading] = useState(true)
-  console.log(pokemonData)
 
   function loadPokemon () {
     setLoading(true)
@@ -28,20 +27,14 @@ function App () {
 
   if (loading) return (<p>loading...</p>)
 
-  // pokemonData
-
-  // get random number
-  function randInt (min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
-  }
-
   const fourPokemon = []
-  // limit random numbers to four instances
   for (let i = 0; i < 4; i++) {
-    const randNum = randInt(1, 151)
-    fourPokemon.push({ pokemon: pokemonData.results[randNum], id: (randNum + 1) })
+    const randNum = Math.floor(Math.random() * (151 - 1 + 1) + 1)
+    if(fourPokemon.every((poke)=>{
+      return poke.id != randNum
+    })){fourPokemon.push({ pokemon: pokemonData.results[randNum-1], id: (randNum) })}
   }
-
+  console.log(fourPokemon)
   return (
     <div>
       <Quiz1 pokemon={fourPokemon} loadPokemon={loadPokemon} />

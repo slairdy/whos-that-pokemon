@@ -74,7 +74,7 @@ h1{
   max-width:calc(800px*1.6);
   background-color:#fff;
   padding:20px;
-  form{
+  .wrap{
     width:100%;
   }
   .buttonWrap{
@@ -112,9 +112,16 @@ h1{
   }
   .correct{
     background-color:$green;
+    &:hover{
+      background-color:$green;
+    }
   }
   .incorrect{
     background-color:$red;
     color:$yellow;
+    &:hover{
+      background-color:$red;
+      color:$yellow;
+    }
   }
 }

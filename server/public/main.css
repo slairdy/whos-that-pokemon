@@ -68,7 +68,7 @@ h1 {
   background-color: #fff;
   padding: 20px;
 }
-#answers form {
+#answers .wrap {
   width: 100%;
 }
 #answers .buttonWrap {
@@ -109,7 +109,14 @@ h1 {
 #answers .correct {
   background-color: #45d145;
 }
+#answers .correct:hover {
+  background-color: #45d145;
+}
 #answers .incorrect {
+  background-color: #ff1f1f;
+  color: #fbd743;
+}
+#answers .incorrect:hover {
   background-color: #ff1f1f;
   color: #fbd743;
 }

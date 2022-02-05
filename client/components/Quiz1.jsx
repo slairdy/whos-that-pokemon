@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react'
 import { propfind } from 'superagent'
 
 function Quiz1 (props) {
-  
+  const[isClicked,setClicked] = useState(false)
   const thatPokemon = props.pokemon[Math.floor(Math.random() * props.pokemon.length)]
+  console.log('The winner is:', thatPokemon.id)
 
   const [style, setStyle] = useState({
     backgroundColor: "#316cb2",
@@ -14,21 +15,25 @@ function Quiz1 (props) {
   })
 
   const isCorrect = evt => {
-    const isCorrect = parseInt(evt.target.id) === thatPokemon.id
-    document.getElementById(thatPokemon.id).className = 'correct'
-    if (isCorrect === true) {
-      evt.target.className = 'correct'
-    } else {
-      evt.target.className = 'incorrect'
+    if(!isClicked){
+      setClicked(true)
+      const isCorrect = parseInt(evt.target.id) === thatPokemon.id
+      document.getElementById(thatPokemon.id).className = 'correct'
+      if (isCorrect === true) {
+        evt.target.className = 'correct'
+      } else {
+        evt.target.className = 'incorrect'
+      }
+      setStyle({
+        background: "url(/images/svgs/"+thatPokemon.id+".svg) no-repeat center / contain",
+        transition: "background-color 1s",
+        transition: "mask 1s"
+      })
+      setTimeout(function () {
+        props.loadPokemon()
+      }, 6000)      
     }
-    setStyle({
-      background: "url(/images/svgs/"+thatPokemon.id+".svg) no-repeat center / contain",
-      transition: "background-color 1s",
-      transition: "mask 1s"
-    })
-    setTimeout(function () {
-      props.loadPokemon()
-    }, 6000)
+
   }
 
   return (
@@ -40,7 +45,7 @@ function Quiz1 (props) {
 
       </div>
       <div id="answers">
-        <form action="#">
+        <div className="wrap">
           <div className="buttonWrap">
             {props.pokemon.map(pokemon => {
               return (
@@ -48,11 +53,7 @@ function Quiz1 (props) {
               )
             })}
           </div>
-          <input type="hidden" name="whatPokemon" value="id1" />
-          <input type="hidden" name="whatPokemon" value="id2" />
-          <input type="hidden" name="whatPokemon" value="id3" />
-          <input type="hidden" name="whatPokemon" value="id4" />
-        </form>
+        </div>
       </div>
 
     </>
