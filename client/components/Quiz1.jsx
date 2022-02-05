@@ -6,7 +6,7 @@ function Quiz1 (props) {
   const thatPokemon = props.pokemon[Math.floor(Math.random() * props.pokemon.length)]
 
   const [style, setStyle] = useState({
-    backgroundColor: "orange",
+    backgroundColor: "#316cb2",
     mask: "url(/images/svgs/"+thatPokemon.id+".svg) no-repeat center / contain",
     WebkitMask: "url(/images/svgs/"+thatPokemon.id+".svg) no-repeat center / contain",
     transition: "background-color 1s",
