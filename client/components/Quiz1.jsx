@@ -14,6 +14,9 @@ function Quiz1 (props) {
     transition: "mask 1s"
   })
 
+  let score = props.score
+  let round = props.round
+
   const isCorrect = evt => {
     if(!isClicked){
       setClicked(true)
@@ -21,9 +24,11 @@ function Quiz1 (props) {
       document.getElementById(thatPokemon.id).className = 'correct'
       if (isCorrect === true) {
         evt.target.className = 'correct'
+        score++
       } else {
         evt.target.className = 'incorrect'
       }
+      round++
       setStyle({
         background: "url(/images/svgs/"+thatPokemon.id+".svg) no-repeat center / contain",
         transition: "background-color 1s",
@@ -31,7 +36,9 @@ function Quiz1 (props) {
       })
       setTimeout(function () {
         props.loadPokemon()
-      }, 6000)      
+        props.setScore(score)
+        props.setRound(round)
+      }, 3000)      
     }
 
   }
@@ -40,9 +47,15 @@ function Quiz1 (props) {
     <>
       <h1>Who&rsquo;s that Pokemon?</h1>
       <div id="quizWrap">
+        <div className="scoreboard large">
+          Score: {score} / {round}
+        </div>
 
         <div id="hiddenPokemon" style={style}></div>
 
+      </div>
+      <div className="scoreboard small">
+        Score: {score} / {round}
       </div>
       <div id="answers">
         <div className="wrap">

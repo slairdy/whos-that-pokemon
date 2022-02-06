@@ -22,6 +22,43 @@ body {
   margin: auto;
 }
 
+.scoreboard {
+  border-radius: 20px;
+  border: 12px #fbd743 solid;
+  filter: drop-shadow(0.2vw 0.2vw 0.2vw #3d61a3);
+  box-sizing: border-box;
+  margin: auto;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #fff;
+  padding: 1vw;
+  color: #316cb2;
+}
+
+.small {
+  display: none;
+  position: static;
+}
+@media (max-width: 846px) {
+  .small {
+    width: 80vw;
+    max-width: 1280px;
+    margin: 12px auto;
+    display: block;
+  }
+}
+
+@media (max-width: 846px) {
+  .large {
+    display: none;
+  }
+}
+
 #hiddenPokemon {
   cursor: pointer;
   margin-top: 11vw;

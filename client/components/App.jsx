@@ -7,6 +7,8 @@ import { getPokemonInfo } from '../api'
 function App () {
   const [pokemonData, setPokemonData] = useState(null) // console.log(pokemonData) = {count: 1118, next: 'https://pokeapi.co/api/v2/pokemon?offset=151&limit=151', previous: null, results: Array(151)}
   const [loading, setLoading] = useState(true)
+  const [score,setScore] = useState(0)
+  const [round,setRound] = useState(0)
 
   function loadPokemon () {
     setLoading(true)
@@ -34,10 +36,18 @@ function App () {
       return poke.id != randNum
     })){fourPokemon.push({ pokemon: pokemonData.results[randNum-1], id: (randNum) })}
   }
+  console.log('current score is '+score)
   console.log(fourPokemon)
   return (
     <div>
-      <Quiz1 pokemon={fourPokemon} loadPokemon={loadPokemon} />
+      <Quiz1 
+      pokemon={fourPokemon}
+      loadPokemon={loadPokemon}
+      score={score}
+      setScore={setScore}
+      round={round}
+      setRound={setRound}
+      />
     </div>
   )
 }
