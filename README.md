@@ -3,5 +3,5 @@ Single page Pokémon quiz built as a Friday challenge ('build anything consuming
 SVG images sourced from @jnovack: https://github.com/jnovack/pokemon-svg.  
 Pokemon API from https://pokeapi.co/.  
   
-![Pokemon-1](https://github.com/slairdy/whos-that-pokemon/blob/main/server/public/images/pokemon1.png)  
-![Pokemon-2](https://github.com/slairdy/whos-that-pokemon/blob/main/server/public/images/pokemon2.png)
+![Pokemon-1](https://github.com/slairdy/whos-that-pokemon/blob/main/server/public/pokemon1.png)  
+![Pokemon-2](https://github.com/slairdy/whos-that-pokemon/blob/main/server/public/pokemon2.png)
